@@ -12,7 +12,7 @@ Projeto de streaming de videos.
 
 As funcionalidades são:
 
-→ Realizar login
+→ Realizar login (necessário utilizar a extensão Moesif Origin & CORS Changer para desabilitar segurança de CORS)
 
 → Criar Executar um video
 
