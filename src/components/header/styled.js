@@ -19,9 +19,9 @@ export const Container = styled.div`
     }
     div{
         img{
-            height: 3vh;
+            height: 2.5vh;
             :hover{
-                background-color: ${YellowMain};
+                cursor:pointer;
             }
         }
     }
@@ -33,7 +33,7 @@ export const SocialContainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 3vw;
+        width: 2vw;
         height: 4vh;
         padding: .2rem;
         background-color: ${GrayMain};
@@ -44,8 +44,23 @@ export const SocialContainer = styled.div`
         }
         a{
             text-decoration: none;
-            img{
-                
+            img{   
+            }
+        }
+    }
+    @media (max-width:450px){
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 8vw;
+            height: 4vh;
+            background-color: ${GrayMain};
+            border-radius: 50%;
+            a{
+                img{
+                    /* width: 1vw;  */
+                }
             }
         }
     }

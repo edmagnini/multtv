@@ -3,6 +3,7 @@ import useForm from "../../hooks/useForm";
 import { Form, FormContainer, InputContainer } from "./styled";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { motion } from "framer-motion";
 
 
 const Login = (props) => {
@@ -34,10 +35,14 @@ const Login = (props) => {
       navigate("/menuPrincipal")
     }
   }, []);
-  
+
 
   return (
-    <div>
+    <motion.div
+      intial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+    >
       <Form onSubmit={handleLogin}>
         <FormContainer>
           <InputContainer>
@@ -77,7 +82,7 @@ const Login = (props) => {
           <button>LOGIN</button>
         </FormContainer>
       </Form>
-    </div>
+    </motion.div>
   )
 }
 
