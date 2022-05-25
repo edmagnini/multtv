@@ -5,12 +5,14 @@ import { White, GrayMain, YellowMain } from "../../constants/color"
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: ${White};
     height: 7vh;
     width: 100vw;
     border-bottom: .3vh solid ${YellowMain};
     p{
+        position: relative;
+        right: 20px;
         font-family: 'Montserrat', sans-serif;
         font-size: 2rem;
         :hover{
@@ -19,48 +21,11 @@ export const Container = styled.div`
     }
     div{
         img{
+            position: relative;
+            left: 20px;
             height: 2.5vh;
             :hover{
                 cursor:pointer;
-            }
-        }
-    }
-`
-export const SocialContainer = styled.div`
-        display: flex;
-        align-items: center;
-    div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2vw;
-        height: 4vh;
-        padding: .2rem;
-        background-color: ${GrayMain};
-        margin: .1rem;
-        border-radius: 50%;
-        :hover{
-            background-color: ${YellowMain};
-        }
-        a{
-            text-decoration: none;
-            img{   
-            }
-        }
-    }
-    @media (max-width:450px){
-        div{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 8vw;
-            height: 4vh;
-            background-color: ${GrayMain};
-            border-radius: 50%;
-            a{
-                img{
-                    /* width: 1vw;  */
-                }
             }
         }
     }
