@@ -1,7 +1,8 @@
 import React, { useEffect } from "react"
 import useForm from "../../hooks/useForm";
-import { Form, FormContainer, InputContainer } from "./styled";
+import { Container, Form, FormContainer, InputContainer } from "./styled";
 import axios from "axios";
+import MultTV_LOGO_WHITE from "../../assets/MultTV_LOGO_WHITE.PNG"
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 
@@ -18,14 +19,14 @@ const Login = (props) => {
     event.preventDefault();
     const body = form
     try {
-      const response = await axios.post(`https://authbee.multtv.tv.br:5892/multtv/apps/entrevista/login`, body)
+      const response = await axios.post(`https://authmass.multtv.tv.br:6445/jlogin.php`, body)
 
 
-      localStorage.setItem("token", response.data.subscriberToken)
+      localStorage.setItem("token", response.data.token)
       navigate("/menuPrincipal")
     } catch (error) {
       alert("Falha ao realizar o login. Por favor, tente novamente.")
-      console.log(error)
+      // console.log(error)
     }
     cleanFields();
   };
@@ -43,8 +44,20 @@ const Login = (props) => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
+      <Container><img src={MultTV_LOGO_WHITE} alt={"MultTV - Logo WHITE"}/></Container>
       <Form onSubmit={handleLogin}>
         <FormContainer>
+        <InputContainer>
+            <input
+              name={"opid"}
+              value={form.opid}
+              onChange={onChange}
+              placeholder=""
+              required
+              type={"opid"}
+            />
+            <label>Operação</label>
+          </InputContainer>
           <InputContainer>
             <input
               name={"user"}
@@ -55,7 +68,7 @@ const Login = (props) => {
               pattern={"^.{3,}"}
               title={"Username must contain at least 3 letters"}
             />
-            <label>USER</label>
+            <label>Usuário</label>
           </InputContainer>
           <InputContainer>
             <input
@@ -66,20 +79,9 @@ const Login = (props) => {
               required
               type={"password"}
             />
-            <label>SENHA</label>
+            <label>Senha</label>
           </InputContainer>
-          <InputContainer>
-            <input
-              name={"opid"}
-              value={form.opid}
-              onChange={onChange}
-              placeholder=""
-              required
-              type={"opid"}
-            />
-            <label>OPERATOR CODE</label>
-          </InputContainer>
-          <button>LOGIN</button>
+          <button>Login</button>
         </FormContainer>
       </Form>
     </motion.div>

@@ -3,8 +3,6 @@ import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import { Container } from "./styled";
 
-import MultImg from "../../assets/512x512.jpg"
-
 const Home = () => {
   const navigate = useNavigate();
   useEffect(() => {

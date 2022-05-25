@@ -1,9 +1,6 @@
 import React from "react";
 import MultTvLogo from "../../assets/MultTV-logo.png"
-import Facebook from "../../assets/facebook.png";
-import Instagram from "../../assets/instagram.png";
-import Linkedin from "../../assets/linkedin.png";
-import { Container, SocialContainer } from "./styled";
+import { Container} from "./styled";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 
@@ -33,23 +30,6 @@ const Header = () => {
                         goToHome()
                     }}>Logout</p>
                 }
-                <SocialContainer>
-                    <div>
-                        <a href="https://www.facebook.com/multtvcompartilhamento/" target="blank">
-                            <img src={Facebook} alt="MultTV - Facebook profile" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.instagram.com/multtv.headend/" target="blank">
-                            <img src={Instagram} alt="MultTV - Instagram profile" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.linkedin.com/company/multtv/" target="blank">
-                            <img src={Linkedin} alt="MultTV - Linkedin profile" />
-                        </a>
-                    </div>
-                </SocialContainer>
             </Container>
         </motion.div>
     )
