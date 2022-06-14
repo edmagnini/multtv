@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {YellowMain, GrayMain} from "../../constants/color"
+import { YellowMain, GrayMain } from "../../constants/color"
 
 export const Container = styled.div` 
     display: flex;
@@ -14,9 +14,9 @@ export const MainVideoContainer = styled.div`
     flex: 1 1 700px;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
-    background-color: ${GrayMain};
     padding:15px;
     height: 85vh;
+    width: 100vw;
     .main-vid-title{
         font-size: 20px;
         position: relative;
@@ -57,45 +57,55 @@ export const MainVideo = styled.video`
     margin-bottom: 7px;
     border-radius: 5px;
     height: 80vh;
-    width: 100%;
+    
 `
 export const ListVideoContainer = styled.div`
+   display: flex;
    flex:1 1 350px;
-   height: 85vh;
-   overflow-y: scroll;
+   height: 15vh;
+   position: absolute;
+   bottom: 0px;
+   overflow-x: auto;
    border-radius: 5px;
    cursor: pointer;
    box-shadow: 0 5px 15px rgba(0,0,0,.1);
-   background-color: ${GrayMain};
    padding:15px;
-   max-width: 30vw;
+   width: 95vw;
    ::-webkit-scrollbar{
-        width: 10px;
+    display:none;
     }
     ::-webkit-scrollbar-track{
-        background-color: #fff;
-        border-radius: 5px;
+        display:none;
     }
     ::-webkit-scrollbar-thumb{
-        background-color: #444;
-        border-radius: 5px;
+        display:none;
     }
     .list.active{
         display: flex;
         align-items: center;
-        gap:15px;
+        height: 15vh;
         padding: .2rem;
-        background-image: linear-gradient(337deg, rgba(33,25,25,1) 7%, rgba(255,255,255,1) 36%, rgba(226,204,2,1) 68%, rgba(66,66,66,1) 100%);;
+        background-color: black;
         border-radius: 5px;
-        margin-bottom: 10px;
-        border-radius: 5px;
+        border: 3px solid ${YellowMain};
+        .epg{
+            display: flex;
+            flex-direction: column;
+            height: 13vh;
+            width: 30vw;
+            justify-content: space-between;
+            
+        }
     }
     .list{
         display: flex;
         align-items: center;
         gap:15px;
+        margin: 0.2vw;
         padding: .2rem;
-        background-image: linear-gradient(337deg, rgba(33,25,25,1) 7%, rgba(255,255,255,1) 36%, rgba(172,158,158,1) 68%, rgba(66,66,66,1) 100%);
+        height: 15vh;
+        color: white;
+        background-color: black;
         border-radius: 5px;
         margin-bottom: 10px;
         border-radius: 5px;
@@ -103,19 +113,25 @@ export const ListVideoContainer = styled.div`
     .list-video{
         display: none;
     }
+    .epg{
+        display: none;
+    }
     .list-title{
+        display: none;
+    }
+    .list-index{
         display: none;
     }
     .c-loader{
         position: relative;
-        left: 25%;
-        top: 15%;
+        left: 50%;
+        top: 25%;
         animation:is-rotating 1s infinite;
         border:6px solid#e5e5e5;
         border-radius:50%;
         border-top-color:#FCCF00;
-        height:200px;
-        width:200px;
+        height: 100px;
+        width: 100px;
     }
     @keyframes is-rotating{
         to{
