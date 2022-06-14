@@ -5,10 +5,8 @@ export const Container = styled.div`
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
     padding-top: 52.70%;
+    position: relative;
     .react-player{
         position: absolute;
         top: 0;
@@ -44,7 +42,7 @@ export const Footer = styled.div`
     position: absolute;
     bottom: 0px;
     width: 100vw;
-    height: 22%;
+    height: 215px;
     div{
         display: flex;
         
@@ -90,7 +88,9 @@ export const Footer = styled.div`
         0%{width:0%;}
         100%{width:100%;}
     }
-    
+    @media (min-height:2160px){
+        height: 415px;
+    }
 `
 
 export const ChannelPrev = styled.div`

@@ -4,7 +4,7 @@ import { YellowMain } from '../../constants/color'
 export const Container = styled.div`
     display: flex;
     justify-content: center;
-    height: 315px;
+    height: 300px;
     img{
         scale: ;
     }
@@ -33,13 +33,6 @@ export const FormContainer = styled.div`
 
         &:hover {
             background-color: #0AD35B;
-        }
-    }
-    @media (max-width:450px){
-        button{
-            margin-top: 1rem;
-            height: 4vh;
-            width: 40vw;
         }
     }
 `
@@ -72,22 +65,5 @@ export const InputContainer = styled.div`
     input:valid ~ label{
         transform: translateY(-1.1em) scale(0.8);
         color:white;
-    }
-    @media (max-width:450px){
-        margin-top: 3vh;
-        input{
-            font-size: 1.5rem;
-            height: 6vh;
-            width: 60vw;
-        }
-        label{
-            position: absolute;
-            background-color: transparent;
-            top: .6rem;
-            left: 1.5rem;
-            transform-origin: 0 0;
-            transition: transform 0.2s ease-in-out;
-            font-size: 1rem;
-        }
     }
 `

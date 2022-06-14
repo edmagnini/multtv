@@ -4,6 +4,7 @@ import { Container, Form, FormContainer, InputContainer } from "./styled";
 import axios from "axios";
 import MultTV_LOGO_WHITE from "../../assets/MultTV_LOGO_WHITE.PNG"
 import { useNavigate } from "react-router";
+import { globalUrl } from "../../constants/globalUrl";
 import { motion } from "framer-motion";
 
 
@@ -19,7 +20,7 @@ const Login = (props) => {
     event.preventDefault();
     const body = form
     try {
-      const response = await axios.post(`https://authmass.multtv.tv.br:6445/jlogin.php`, body)
+      const response = await axios.post(`${globalUrl}/jlogin.php`, body)
 
 
       localStorage.setItem("token", response.data.token)
@@ -39,11 +40,7 @@ const Login = (props) => {
 
 
   return (
-    <motion.div
-      intial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
-    >
+    <>
       <Container><img src={MultTV_LOGO_WHITE} alt={"MultTV - Logo WHITE"}/></Container>
       <Form onSubmit={handleLogin}>
         <FormContainer>
@@ -84,7 +81,7 @@ const Login = (props) => {
           <button>Login</button>
         </FormContainer>
       </Form>
-    </motion.div>
+    </>
   )
 }
 

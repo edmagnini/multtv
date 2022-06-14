@@ -13,7 +13,7 @@ const AnimatedRoutes = () => {
         <AnimatePresence >
             <Routes  location={location} key={location.pathname}
             >
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/menuPrincipal" element={<MenuPrincipal />} />
                 <Route path="/channelPage/:url" element={<ChannelPage />} />
