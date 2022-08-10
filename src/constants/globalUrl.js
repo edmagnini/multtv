@@ -1,1 +1,1 @@
-export const globalUrl = "https://authmass.multtv.tv.br:6445"
+export const globalUrl = ""
